@@ -1,0 +1,13 @@
+.login-style {
+    height: calc(100vh - 80px);
+    background-image: url('https://media.istockphoto.com/photos/grocery-shopping-concept-foods-with-shopping-bag-picture-id1126188273?k=20&m=1126188273&s=612x612&w=0&h=kbpIksZyK1cgH5lYSN8A4jiwQ1U1oCZlY_pYMdEYxmo=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: overlay;
+}
+
+.form-style {
+    background-color: wheat;
+    border-radius: 5px;
+}

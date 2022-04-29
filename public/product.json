@@ -1,58 +1,110 @@
 [
     {
         "_id": 1,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "name": "Rice",
+        "price": "60",
+        "quantity": "50 kg",
+        "supplier": "Mr.Rahim",
+        "description": "Rice is the seed of the grass species Oryza sativa or less commonly Oryza glaberrima.",
+        "img": "https://i.ibb.co/xfxdqGR/rice.jpg"
     },
     {
         "_id": 2,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "name": "Lentil",
+        "price": "80",
+        "quantity": "50 kg",
+        "supplier": "Mr.Karim",
+        "description": "The lentil is an edible legume. It is an annual plant known for its lens-shaped seeds.",
+        "img": "https://i.ibb.co/Y3sHJSR/dry-red-lentils-for-how-to-cook-red-lentils-recipe-1.jpg"
     },
     {
         "_id": 3,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "name": "Salt",
+        "price": "35",
+        "quantity": "50 kg",
+        "supplier": "Mr.Zahid",
+        "description": "Salt is a mineral composed primarily of sodium chloride, a chemical compound belonging to the larger class of salts; salt in the form of a natural crystalline mineral is known as rock salt or halite. ",
+        "img": "https://i.ibb.co/tQZDmJg/salt.webp"
     },
     {
         "_id": 4,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "name": "Oil",
+        "price": "170",
+        "quantity": "50 kg",
+        "supplier": "Mr.Saymon",
+        "description": "Soybean oil is a vegetable oil extracted from the seeds of the soybean. It is one of the most widely consumed cooking oils and the second most consumed vegetable oil.",
+        "img": "https://i.ibb.co/W0VTW0B/oil.jpg"
     },
     {
         "_id": 5,
-        "name": "ENGINE DIAGNOSTIC",
+        "name": "Chicken",
         "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "quantity": "50 kg",
+        "supplier": "Mr.Hydar",
+        "description": "The chicken is a domesticated subspecies of the red junglefowl, with attributes of wild species such as grey and ceylon junglefowl that are originally from Southeastern Asia. ",
+        "img": "https://i.ibb.co/YBjTF7P/chickenjpg.jpg"
     },
     {
         "_id": 6,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "name": "Fish",
+        "price": "200",
+        "quantity": "50 kg",
+        "supplier": "Mr.Rubel",
+        "description": "Many species of fish are caught by humans and consumed as food in virtually all regions around the world. Fish has been an important dietary source of protein and other nutrients throughout human history.",
+        "img": "https://i.ibb.co/ykM9078/fish.webp"
     },
     {
         "_id": 7,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "name": "Spice",
+        "price": "250",
+        "quantity": "50 kg",
+        "supplier": "Mr.Zarif",
+        "description": "A spice is a seed, fruit, root, bark, or other plant substance primarily used for flavoring or coloring food.",
+        "img": "https://i.ibb.co/602Jgjg/64699039.jpg"
     },
     {
         "_id": 8,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "name": "Garlic",
+        "price": "70",
+        "quantity": "50 kg",
+        "supplier": "Mr.Billal",
+        "description": "Garlic is a species of bulbous flowering plant in the genus Allium. Its close relatives include the onion, shallot, leek, chive, Welsh onion and Chinese onion.",
+        "img": "https://i.ibb.co/ZHDWGhd/Adobe-Stock-114488460.jpg"
+    },
+    {
+        "_id": 9,
+        "name": "Ginger",
+        "price": "100",
+        "quantity": "50 kg",
+        "supplier": "Mr.Hasan",
+        "description": "Ginger is loaded with antioxidants, compounds that prevent stress and damage to your body's DNA. They may help your body fight off chronic diseases like high blood pressure, heart disease, and diseases of the lungs, plus promote healthy aging.",
+        "img": "https://i.ibb.co/bWGZCmk/320546-2200-732x549.jpg"
+    },
+    {
+        "_id": 10,
+        "name": "Brochli",
+        "price": "60",
+        "quantity": "50 kg",
+        "supplier": "Mr.Masud",
+        "description": "Broccoli is an edible green plant in the cabbage family whose large flowering head, stalk and small associated leaves are eaten as a vegetable.",
+        "img": "https://i.ibb.co/6gnFJ0v/broccoli-thumbnail-df7b66e.jpg"
+    },
+    {
+        "_id": 11,
+        "name": "Carrot",
+        "price": "25",
+        "quantity": "50 kg",
+        "supplier": "Mr.Hydar",
+        "description": "The carrot is a root vegetable, typically orange in color, though purple, black, red, white, and yellow cultivars exist, all of which are domesticated forms of the wild carrot, Daucus carota, native to Europe and Southwestern Asia.",
+        "img": "https://i.ibb.co/mtjRGHc/carrots.webp"
+    },
+    {
+        "_id": 12,
+        "name": "Onion",
+        "price": "40",
+        "quantity": "50 kg",
+        "supplier": "Mr.Zarif",
+        "description": "The onion, also known as the bulb onion or common onion, is a vegetable that is the most widely cultivated species of the genus Allium.",
+        "img": "https://i.ibb.co/B3VvtVG/onion.jpg"
     }
 ]

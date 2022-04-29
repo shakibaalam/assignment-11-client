@@ -1,6 +1,8 @@
 .banner {
-    height: 100vh;
+    height: calc(100vh - 80px);
     background-image: url('https://www.timeoutjeddah.com/cloud/timeoutjeddah/2021/07/11/Supermarkets-in-Jeddah.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
 }
