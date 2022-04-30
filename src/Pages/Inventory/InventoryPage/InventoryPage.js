@@ -7,7 +7,7 @@ const InventoryPage = () => {
     const [product, setProduct] = useProductDetail(productId);
     let { name, price, img, description, supplier, quantity, _id } = product;
 
-    const [q, setQ] = useState(0);
+    let [q, setQ] = useState([]);
     useEffect(() => {
         const url = `http://localhost:5000/products/${productId}/quantity`
         fetch(url)
@@ -16,7 +16,20 @@ const InventoryPage = () => {
     }, [productId]);
 
     const handleDeliver = () => {
-        setQ(q - 1);
+        const count = (q - 1).toString()
+        const update = { count };
+        console.log(update);
+        const url = `http://localhost:5000/products/${productId}`
+        fetch(url, {
+            method: 'PUT',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(update)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(parseInt(data.count));
+                setQ(parseInt(data.count))
+            })
     }
     return (
         <div className="container">
