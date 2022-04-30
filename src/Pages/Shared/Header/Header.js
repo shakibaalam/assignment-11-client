@@ -10,13 +10,12 @@ const Header = () => {
     const [user, loading, error] = useAuthState(auth);
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" className='nav-style'>
+            <Navbar fixed="top" collapseOnSelect expand="lg" className='nav-style'>
                 <Container>
                     <Navbar.Brand><Link to='/home'>Grocery Stock</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="home#inventory-section">Inventory</Nav.Link>
                             {
                                 user &&
                                 <Nav.Link><CustomLink to='/my'>My-product</CustomLink></Nav.Link>

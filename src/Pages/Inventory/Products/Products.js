@@ -11,7 +11,7 @@ const Products = ({ pd }) => {
     return (
         <div classNameName="col">
             <div classNameName="card">
-                <div className='w-50 mx-auto '>
+                <div className='w-75 mx-auto'>
                     <img src={img} className="card-img-top img-style" alt="..." />
                 </div>
                 <div className="card-body m-3">
