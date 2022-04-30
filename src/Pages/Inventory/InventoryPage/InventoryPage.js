@@ -20,6 +20,26 @@ const InventoryPage = () => {
     const handleDeliver = () => {
         const count = (q - 1).toString()
         const update = { count };
+        // console.log(update);
+        const url = `http://localhost:5000/products/${productId}`
+        fetch(url, {
+            method: 'PUT',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(update)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(parseInt(data.count));
+                setQ(parseInt(data.count))
+            })
+    };
+
+    const handleRestock = (e) => {
+        e.preventDefault();
+        const amount = parseInt(e.target.formBasicPassword.value)
+        console.log(amount);
+        const count = (q + amount).toString()
+        const update = { count };
         console.log(update);
         const url = `http://localhost:5000/products/${productId}`
         fetch(url, {
@@ -29,7 +49,7 @@ const InventoryPage = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(parseInt(data.count));
+                // console.log(parseInt(data.count));
                 setQ(parseInt(data.count))
             })
     }
@@ -57,13 +77,13 @@ const InventoryPage = () => {
                 </div>
                 <div className="col-md-6 form-style mt-5 pt-5 ">
                     <div className='w-50 mx-auto'>
-                        <Form>
+                        <Form onSubmit={handleRestock}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Control type="email" value={name} />
+                                <Form.Control type="text" value={name} readOnly />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Form.Control type="password" placeholder="Password" />
+                                <Form.Control type="number" placeholder="amount" />
                             </Form.Group>
                             <Button variant="primary" type="submit">
                                 Restock
