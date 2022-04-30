@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useProductDetail from '../../../Hooks/useProductDetail';
+import './InventoryPage.css'
 
 const InventoryPage = () => {
     const { productId } = useParams();
     const [product, setProduct] = useProductDetail(productId);
-    let { name, price, img, description, supplier, quantity, _id } = product;
+    const { name, price, img, description, supplier, quantity, _id } = product;
 
-    let [q, setQ] = useState([]);
+    const [q, setQ] = useState([]);
     useEffect(() => {
         const url = `http://localhost:5000/products/${productId}/quantity`
         fetch(url)
@@ -32,21 +34,41 @@ const InventoryPage = () => {
             })
     }
     return (
-        <div className="container">
-            <div class="row row-cols-1 row-cols-md-3 g-5 mt-5">
-                <div classNameName="col">
-                    <div classNameName="card">
-                        <div className='w-50 mx-auto '>
-                            <img src={img} className="card-img-top img-style" alt="..." />
+        <div className="container mt-5">
+            <div className="row ">
+                <div className="col-md-6" >
+                    <div class="mt-5">
+                        <div classNameName="col">
+                            <div classNameName="card">
+                                <div className='w-50 mx-auto '>
+                                    <img src={img} className="card-img-top img-style" alt="..." />
+                                </div>
+                                <div className="card-body m-3">
+                                    <h5 className="card-title">{name}</h5>
+                                    <p className="card-text">{description}</p>
+                                    <p>Quantity: {q} kg</p>
+                                    <p>Supplier: {supplier}</p>
+                                    <h5>Price :{price} Tk</h5>
+                                    <button onClick={handleDeliver} className='btn btn-link btn-style my-4'>Delivered</button>
+                                </div>
+                            </div>
                         </div>
-                        <div className="card-body m-3">
-                            <h5 className="card-title">{name}</h5>
-                            <p className="card-text">{description}</p>
-                            <p>Quantity: {q} kg</p>
-                            <p>Supplier: {supplier}</p>
-                            <h5>Price :{price} Tk</h5>
-                            <button onClick={handleDeliver} className='btn btn-link btn-style my-4'>Delivered</button>
-                        </div>
+                    </div>
+                </div>
+                <div className="col-md-6 form-style mt-5 pt-5 ">
+                    <div className='w-50 mx-auto'>
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Control type="email" value={name} />
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Control type="password" placeholder="Password" />
+                            </Form.Group>
+                            <Button variant="primary" type="submit">
+                                Restock
+                            </Button>
+                        </Form>
                     </div>
                 </div>
             </div>
