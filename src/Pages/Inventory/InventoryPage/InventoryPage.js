@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import useProductDetail from '../../../Hooks/useProductDetail';
 
 const InventoryPage = () => {
-    const { id } = useParams();
-    const [product, setProduct] = useProductDetail(id);
+    const { productId } = useParams();
+    const [product, setProduct] = useProductDetail(productId);
     return (
         <div>
             <h2>{product.name}</h2>

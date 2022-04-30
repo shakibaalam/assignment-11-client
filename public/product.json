@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "name": "Rice",
         "price": "60",
         "quantity": "50 kg",
@@ -9,7 +8,6 @@
         "img": "https://i.ibb.co/xfxdqGR/rice.jpg"
     },
     {
-        "_id": 2,
         "name": "Lentil",
         "price": "80",
         "quantity": "50 kg",
@@ -18,7 +16,6 @@
         "img": "https://i.ibb.co/Y3sHJSR/dry-red-lentils-for-how-to-cook-red-lentils-recipe-1.jpg"
     },
     {
-        "_id": 3,
         "name": "Salt",
         "price": "35",
         "quantity": "50 kg",
@@ -27,7 +24,6 @@
         "img": "https://i.ibb.co/tQZDmJg/salt.webp"
     },
     {
-        "_id": 4,
         "name": "Oil",
         "price": "170",
         "quantity": "50 kg",
@@ -36,7 +32,6 @@
         "img": "https://i.ibb.co/W0VTW0B/oil.jpg"
     },
     {
-        "_id": 5,
         "name": "Chicken",
         "price": "300",
         "quantity": "50 kg",
@@ -45,7 +40,6 @@
         "img": "https://i.ibb.co/YBjTF7P/chickenjpg.jpg"
     },
     {
-        "_id": 6,
         "name": "Fish",
         "price": "200",
         "quantity": "50 kg",
@@ -54,7 +48,6 @@
         "img": "https://i.ibb.co/ykM9078/fish.webp"
     },
     {
-        "_id": 7,
         "name": "Spice",
         "price": "250",
         "quantity": "50 kg",
@@ -63,7 +56,6 @@
         "img": "https://i.ibb.co/602Jgjg/64699039.jpg"
     },
     {
-        "_id": 8,
         "name": "Garlic",
         "price": "70",
         "quantity": "50 kg",
@@ -72,7 +64,6 @@
         "img": "https://i.ibb.co/ZHDWGhd/Adobe-Stock-114488460.jpg"
     },
     {
-        "_id": 9,
         "name": "Ginger",
         "price": "100",
         "quantity": "50 kg",
@@ -81,7 +72,6 @@
         "img": "https://i.ibb.co/bWGZCmk/320546-2200-732x549.jpg"
     },
     {
-        "_id": 10,
         "name": "Brochli",
         "price": "60",
         "quantity": "50 kg",
@@ -90,7 +80,6 @@
         "img": "https://i.ibb.co/6gnFJ0v/broccoli-thumbnail-df7b66e.jpg"
     },
     {
-        "_id": 11,
         "name": "Carrot",
         "price": "25",
         "quantity": "50 kg",
@@ -99,7 +88,6 @@
         "img": "https://i.ibb.co/mtjRGHc/carrots.webp"
     },
     {
-        "_id": 12,
         "name": "Onion",
         "price": "40",
         "quantity": "50 kg",
