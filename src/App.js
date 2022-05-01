@@ -10,7 +10,7 @@ import Register from './Pages/Authentication/Register/Register';
 import Blog from './Pages/Blog/Blog';
 import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
 import NotFound from './Pages/Shared/NotFound/NotFound';
-import AddProduct from './Pages/AddProduct/AddProduct';
+import AddInventory from './Pages/Inventory/AddInventory/AddInventory';
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
         } />
         <Route path="/add" element={
           <RequireAuth>
-            <AddProduct></AddProduct>
+            <AddInventory></AddInventory>
           </RequireAuth>
         } />
         <Route path="/blog" element={<Blog></Blog>} />

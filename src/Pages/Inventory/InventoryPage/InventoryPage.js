@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useProductDetail from '../../../Hooks/useProductDetail';
+import CustomLink from '../../Shared/CustomLink/CustomLink';
 import './InventoryPage.css'
 
 const InventoryPage = () => {
@@ -52,6 +53,7 @@ const InventoryPage = () => {
                 // console.log(parseInt(data.count));
                 setQ(parseInt(data.count))
             })
+        e.target.reset()
     }
     return (
         <div className="container mt-5">
@@ -91,6 +93,9 @@ const InventoryPage = () => {
                         </Form>
                     </div>
                 </div>
+            </div>
+            <div className='mt-5  d-flex justify-content-center'>
+                <CustomLink to='/manage'> <button className='btn btn-link btn-style mt-5'>Manage Inventories</button></CustomLink>
             </div>
         </div>
     );
