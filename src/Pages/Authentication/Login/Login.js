@@ -19,30 +19,38 @@ const Login = () => {
         const pass = e.target.formBasicPassword.value;
         signInWithEmailAndPassword(email, pass);
         e.target.reset();
-        console.log(email, pass);
-
     }
     if (user) {
-        // navigate(from, { replace: true });
-        navigate('/')
+        navigate(from, { replace: true });
     }
+
     return (
         <div className='login-style pt-5'>
-            <h1 className='text-center fw-bold'>Sign In</h1>
+            <h1 className='text-center fw-bold mt-5'>Sign In</h1>
             <div className='w-50 mx-auto form-style p-5'>
                 <Form onSubmit={handleLogIn}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Control type="email" placeholder="Enter email" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" placeholder="Password" required />
+
+                        <p className='text-danger text-center'>{error?.message}</p>
 
                         <p >Forget Password?<button className='btn btn-link mb-2 text-decoration-none'>Reset Password</button></p>
 
                     </Form.Group>
+
+                    <div className='text-center'>
+                        {
+                            loading && <div class="spinner-grow text-info " role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        }
+                    </div>
 
                     <Button variant="primary" type="submit">
                         Submit
