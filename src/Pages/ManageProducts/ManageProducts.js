@@ -1,10 +1,26 @@
 import React from 'react';
 import useProduct from '../../Hooks/useProduct';
-import Manage from '../Manage/Manage';
+import { RiDeleteBack2Fill } from 'react-icons/ri';
 import CustomLink from '../Shared/CustomLink/CustomLink';
 
 const ManageProducts = () => {
-    const [products] = useProduct();
+    const [products, setProducts] = useProduct();
+
+    const handleDelete = (id) => {
+        const proceed = window.confirm('Wanna you sure for remove?');
+        if (proceed) {
+            const url = `http://localhost:5000/products/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = products.filter(product => product._id !== id);
+                    setProducts(remaining)
+                })
+        }
+    }
     return (
         <div className='container mt-5 pt-5'>
             <div className='d-flex justify-content-between'>
@@ -16,7 +32,25 @@ const ManageProducts = () => {
 
             <div className="row row-cols-1 row-cols-md-3 g-5 mt-5">
                 {
-                    products.map(pd => <Manage key={pd._id} pd={pd}></Manage>)
+                    products.map(pd =>
+                        <div className="col">
+                            <div className="card">
+                                <div className=' d-flex justify-content-between'>
+                                    <div className='w-75 mx-auto'>
+                                        <img src={pd.img} className="card-img-top img-style" alt="..." />
+                                    </div>
+                                    <div className='text-danger fw-bold fs-5' onClick={() => handleDelete(pd._id)}><RiDeleteBack2Fill></RiDeleteBack2Fill></div>
+                                </div>
+                                <div className="card-body m-3">
+                                    <h5 className="card-title">{pd.name}</h5>
+                                    <p className="card-text">{pd.description.slice(0, 100)}</p>
+                                    <p>Quantity: {pd.quantity} kg</p>
+                                    <p>Supplier: {pd.supplier}</p>
+                                    <h5>Price :{pd.price} Tk</h5>
+                                </div>
+                            </div>
+                        </div>
+                    )
                 }
             </div>
         </div>
