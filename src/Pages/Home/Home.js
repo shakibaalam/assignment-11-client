@@ -1,5 +1,6 @@
 import React from 'react';
 import InventorySection from '../Inventory/InventorySection/InventorySection';
+import Footer from '../Shared/Footer/Footer';
 import './Home .css'
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
 
             </div>
             <InventorySection></InventorySection>
+            <Footer></Footer>
         </div>
     );
 };
