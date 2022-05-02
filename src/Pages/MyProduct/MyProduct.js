@@ -2,6 +2,7 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { RiDeleteBack2Fill } from 'react-icons/ri';
 import auth from '../firebase.init';
 
 const MyProduct = () => {
@@ -30,12 +31,53 @@ const MyProduct = () => {
         }
         getAdd();
     }, [user])
+
+    const handleDelete = (id) => {
+        const proceed = window.confirm('Wanna you sure for remove?');
+        if (proceed) {
+            const url = `http://localhost:5000/products/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    const remaining = myItem.filter(item => item._id !== id);
+                    setMyItem(remaining)
+                })
+        }
+    }
     return (
         <div className='mt-5 pt-5 container'>
-            <h2>User:{user?.displayName}</h2>
-            <h3>Email:{user?.email} {user?.emailVerified && <p className='text-danger'>(verified)</p>}</h3>
-            <img src={user?.photoURL} alt="" />
-            <h5>My Items: {myItem.length}</h5>
+            <div>
+                <h2>User:{user?.displayName}</h2>
+                <h3>Email:{user?.email} {user?.emailVerified && <p className='text-danger'>(verified)</p>}</h3>
+                <img src={user?.photoURL} alt="" />
+                <h5>My Items: {myItem.length}</h5>
+            </div>
+
+            <div className="row row-cols-1 row-cols-md-3 g-5 mt-5">
+                {
+                    myItem.map(data =>
+                        <div className="col">
+                            <div className="card h-100 shadow-lg">
+                                <div className=' d-flex justify-content-between'>
+                                    <div className='w-75 mx-auto'>
+                                        <img src={data.img} className="card-img-top img-style" alt="..." />
+                                    </div>
+                                    <div className='text-danger fw-bold fs-5' onClick={() => handleDelete(data._id)}><RiDeleteBack2Fill></RiDeleteBack2Fill></div>
+                                </div>
+                                <div className="card-body m-3">
+                                    <h5 className="card-title">{data.name}</h5>
+                                    <p className="card-text">{data.description}</p>
+                                    <p>Quantity: {data.quantity} kg</p>
+                                    <p>Supplier: {data.supplier}</p>
+                                    <h5>Price :{data.price} Tk</h5>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }
+            </div>
         </div>
     );
 };

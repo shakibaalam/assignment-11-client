@@ -16,7 +16,7 @@ const AddInventory = () => {
         const price = e.target.formBasicNumber.value;
         console.log(img, name, description, amount, supplier, price);
 
-        const data = { email, img, name, description, amount, supplierName: supplier, price };
+        const data = { email, img, name, description, amount, supplier, price };
         const url = `http://localhost:5000/products`
         fetch(url, {
             method: 'POST',
@@ -27,6 +27,7 @@ const AddInventory = () => {
             .then(data => {
                 console.log(data);
             })
+        alert('Added item successfully')
         e.target.reset();
     }
     return (
