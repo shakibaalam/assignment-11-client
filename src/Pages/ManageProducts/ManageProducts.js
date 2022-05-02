@@ -33,7 +33,7 @@ const ManageProducts = () => {
                 {
                     products.map(pd =>
                         <div className="col">
-                            <div className="card">
+                            <div className="card h-100 shadow-lg">
                                 <div className=' d-flex justify-content-between'>
                                     <div className='w-75 mx-auto'>
                                         <img src={pd.img} className="card-img-top img-style" alt="..." />
@@ -42,7 +42,7 @@ const ManageProducts = () => {
                                 </div>
                                 <div className="card-body m-3">
                                     <h5 className="card-title">{pd.name}</h5>
-                                    <p className="card-text">{pd.description.slice(0, 100)}</p>
+                                    <p className="card-text">{pd.description}</p>
                                     <p>Quantity: {pd.quantity} kg</p>
                                     <p>Supplier: {pd.supplier}</p>
                                     <h5>Price :{pd.price} Tk</h5>

@@ -10,7 +10,7 @@ const Products = ({ pd }) => {
     }
     return (
         <div className="col">
-            <div className="card">
+            <div className="card h-100 shadow-lg">
                 <div className='w-75 mx-auto'>
                     <img src={img} className="card-img-top img-style" alt="..." />
                 </div>

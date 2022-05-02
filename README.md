@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+# Grab Grocers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Description:Here we store some products that can be delivered ,restock,manage and update products quantity and others.
+
+This project was bootstrapped with [Client side private repo github link](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-shakibaalam).
+
+This project was also bootstrapped with [Server side private repo github link](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-shakibaalam).
+
+## About this projects are:
+- This project related with a Grocery stock management
+- In this project there is a header
+- A manage section
+- Login page ,sign up 
+- And also a question answering part in blog page
 
 ## Available Scripts
 
