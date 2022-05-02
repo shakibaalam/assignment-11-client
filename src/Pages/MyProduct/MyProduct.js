@@ -1,17 +1,32 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 
 const MyProduct = () => {
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
     const [myItem, setMyItem] = useState([]);
     useEffect(() => {
         const getAdd = async () => {
             const email = user.email;
             const url = `http://localhost:5000/newProducts?email=${email}`
-            fetch(url)
-                .then(res => res.json())
-                .then(data => setMyItem(data));
+            try {
+                fetch(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                })
+                    .then(res => res.json())
+                    .then(data => setMyItem(data));
+            } catch (error) {
+                console.log(error.message);
+                if (error.response.status === 401 || error.response.status === 403) {
+                    signOut(auth);
+                    navigate('/login')
+                }
+            }
         }
         getAdd();
     }, [user])

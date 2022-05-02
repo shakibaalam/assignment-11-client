@@ -11,7 +11,7 @@ const RequireAuth = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <div class="d-flex justify-content-center">
+        return <div className="d-flex justify-content-center">
             <div className="spinner-border text-info" role="status">
                 <span className="visually-hidden">Loading...</span>
             </div>
