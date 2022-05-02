@@ -1,9 +1,13 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const AddInventory = () => {
+    const [user, loading, error] = useAuthState(auth);
     const handleAdd = (e) => {
         e.preventDefault();
+        const email = e.target.formBasicEmail.value;
         const img = e.target.formBasicImg.value;
         const name = e.target.formBasicName.value;
         const description = e.target.formBasicDescription.value;
@@ -12,7 +16,7 @@ const AddInventory = () => {
         const price = e.target.formBasicNumber.value;
         console.log(img, name, description, amount, supplier, price);
 
-        const data = { img, name, description, amount, supplierName: supplier, price };
+        const data = { email, img, name, description, amount, supplierName: supplier, price };
         const url = `http://localhost:5000/products`
         fetch(url, {
             method: 'POST',
@@ -30,6 +34,10 @@ const AddInventory = () => {
             <h2 className='text-center my-4'>Add new item....</h2>
             <div className='w-50 mx-auto'>
                 <Form onSubmit={handleAdd}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Control type="text" value={user?.email} readOnly />
+                    </Form.Group>
+
                     <Form.Group className="mb-3" controlId="formBasicImg">
                         <Form.Control type="text" placeholder='img url' />
                     </Form.Group>
