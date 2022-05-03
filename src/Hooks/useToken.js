@@ -7,7 +7,7 @@ const useToken = user => {
             console.log(user);
             const email = user?.user?.email
             if (email) {
-                const url = `http://localhost:5000/login`
+                const url = `https://guarded-stream-31463.herokuapp.com/login`
                 fetch(url, {
                     method: 'POST',
                     headers: { 'content-type': 'application/json' },

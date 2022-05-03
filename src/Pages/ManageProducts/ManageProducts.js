@@ -14,7 +14,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Wanna you sure for remove?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://guarded-stream-31463.herokuapp.com/products/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

@@ -15,7 +15,7 @@ const MyProduct = () => {
     useEffect(() => {
         const getAdd = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/newProducts?email=${email}`
+            const url = `https://guarded-stream-31463.herokuapp.com/newProducts?email=${email}`
             try {
                 fetch(url, {
                     headers: {
@@ -38,7 +38,7 @@ const MyProduct = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Wanna you sure for remove?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://guarded-stream-31463.herokuapp.com/products/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

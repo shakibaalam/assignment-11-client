@@ -4,7 +4,15 @@ Description:Here we store some products that can be delivered ,restock,manage an
 
 This project was bootstrapped with [Client side private repo github link](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-shakibaalam).
 
+Client side live link: [assignment-11-7321c.web.app](assignment-11-7321c.web.app).
+
+
+
 This project was also bootstrapped with [Server side private repo github link](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-shakibaalam).
+
+Server side live link: [https://guarded-stream-31463.herokuapp.com](https://guarded-stream-31463.herokuapp.com).
+
+
 
 ## About this projects are:
 - This project related with a Grocery stock management

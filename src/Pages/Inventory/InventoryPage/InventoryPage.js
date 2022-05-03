@@ -12,7 +12,7 @@ const InventoryPage = () => {
 
     const [q, setQ] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/products/${productId}/quantity`
+        const url = `https://guarded-stream-31463.herokuapp.com/products/${productId}/quantity`
         fetch(url)
             .then(res => res.json())
             .then(data => setQ(data));
@@ -22,7 +22,7 @@ const InventoryPage = () => {
         const count = (q - 1).toString()
         const update = { count };
         // console.log(update);
-        const url = `http://localhost:5000/products/${productId}`
+        const url = `https://guarded-stream-31463.herokuapp.com/products/${productId}`
         fetch(url, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
@@ -42,7 +42,7 @@ const InventoryPage = () => {
         const count = (q + amount).toString()
         const update = { count };
         console.log(update);
-        const url = `http://localhost:5000/products/${productId}`
+        const url = `https://guarded-stream-31463.herokuapp.com/products/${productId}`
         fetch(url, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },

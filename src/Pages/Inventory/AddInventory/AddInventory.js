@@ -17,7 +17,7 @@ const AddInventory = () => {
         console.log(img, name, description, amount, supplier, price);
 
         const data = { email, img, name, description, amount, supplier, price };
-        const url = `http://localhost:5000/products`
+        const url = `https://guarded-stream-31463.herokuapp.com/products`
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
