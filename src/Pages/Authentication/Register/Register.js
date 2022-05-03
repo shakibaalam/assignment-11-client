@@ -7,22 +7,28 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import useToken from '../../../Hooks/useToken';
 
 const Register = () => {
     const navigate = useNavigate();
 
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [token] = useToken(user);
 
-    const [error1, setError1] = useState('')
+    const [error1, setError1] = useState('');
 
-    const handleSignIn = e => {
+    if (token) {
+        navigate('/');
+    }
+
+    const handleSignIn = async (e) => {
         e.preventDefault();
         const email = e.target.formBasicEmail.value;
         const pass = e.target.formBasicPassword.value;
         const confirmPass = e.target.formBasicConfirmPassword.value;
+        console.log(email, pass, confirmPass);
         if (pass === confirmPass) {
-            createUserWithEmailAndPassword(email, pass)
-            navigate('/');
+            await createUserWithEmailAndPassword(email, pass)
         }
         else {
             setError1("password didn't match");
@@ -50,7 +56,7 @@ const Register = () => {
                         <Form.Control type="password" placeholder="Password" required />
                     </Form.Group>
 
-                    <p className='text-danger text-center'>{error1 || error?.message}</p>
+                    <p className='text-danger text-center'>{error?.message || error1}</p>
 
                     <Button variant="primary" type="submit">
                         Submit

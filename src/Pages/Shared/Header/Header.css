@@ -1,7 +1,11 @@
 .nav-style {
     height: 80px;
-    background-color: #c6ee8f;
+    background-color: #FDD670;
     color: white;
     font-size: 20px;
     font-weight: 500;
+}
+
+.logo-style {
+    color: steelblue
 }

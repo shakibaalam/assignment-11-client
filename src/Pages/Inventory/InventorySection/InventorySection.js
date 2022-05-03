@@ -8,13 +8,13 @@ const InventorySection = () => {
     const [products] = useProduct();
     return (
         <div className='container mt-5'>
-            <h2>Inventory {products.length}</h2>
-            <div className="row row-cols-1 row-cols-md-3 g-5 mt-5">
+            <h2 className='text-center logo-style'>Inventory Section : {products.length}</h2>
+            <div className="row row-cols-1 row-cols-md-3 g-4 mt-5">
                 {
                     products.slice(0, 6).map(pd => <Products key={pd._id} pd={pd}></Products>)
                 }
-                <div className='w-100 d-flex justify-content-end'>
-                    <CustomLink to='/manage'> <button className='btn btn-link btn-style'>Manage Inventories</button></CustomLink>
+                <div className='w-100 d-flex justify-content-end mb-5'>
+                    <CustomLink to='/manage'> <button className='btn btn-link btn-style mt-5'>Manage Inventories</button></CustomLink>
                 </div>
             </div>
         </div>

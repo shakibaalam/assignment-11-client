@@ -7,6 +7,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
+import useToken from '../../../Hooks/useToken';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -20,24 +21,13 @@ const Login = () => {
 
     const [sendPasswordResetEmail, errorReset] = useSendPasswordResetEmail(auth);
 
+    const [token] = useToken(user);
+
     const handleLogIn = async (e) => {
         e.preventDefault();
         const email = emailRef.current.value;
         const pass = passRef.current.value;
         await signInWithEmailAndPassword(email, pass);
-        const url = `http://localhost:5000/login`
-        fetch(url, {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ email })
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                localStorage.setItem('accessToken', data.accessToken);
-                navigate(from, { replace: true });
-            })
-
         e.target.reset();
     }
 
@@ -54,8 +44,8 @@ const Login = () => {
         }
     }
 
-    if (user) {
-        // navigate(from, { replace: true });
+    if (token) {
+        navigate(from, { replace: true });
     }
 
     return (

@@ -7,7 +7,7 @@ import './InventoryPage.css'
 
 const InventoryPage = () => {
     const { productId } = useParams();
-    const [product, setProduct] = useProductDetail(productId);
+    const [product] = useProductDetail(productId);
     const { name, price, img, description, supplier, quantity, _id } = product;
 
     const [q, setQ] = useState([]);
@@ -56,7 +56,7 @@ const InventoryPage = () => {
         e.target.reset()
     }
     return (
-        <div className="container mt-5">
+        <div className="container mt-5 form-style">
             <div className="row ">
                 <div className="col-md-6" >
                     <div class="mt-5">
@@ -77,7 +77,7 @@ const InventoryPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-6 form-style mt-5 pt-5 ">
+                <div className="col-md-6 d-flex justify-content-center align-items-center mt-5 pt-5 ">
                     <div className='w-50 mx-auto'>
                         <Form onSubmit={handleRestock}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -87,7 +87,7 @@ const InventoryPage = () => {
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Control type="number" placeholder="amount" />
                             </Form.Group>
-                            <Button variant="primary" type="submit">
+                            <Button className='btn-style' variant="" type="submit">
                                 Restock
                             </Button>
                         </Form>
@@ -95,7 +95,7 @@ const InventoryPage = () => {
                 </div>
             </div>
             <div className='mt-5  d-flex justify-content-center'>
-                <CustomLink to='/manage'> <button className='btn btn-link btn-style mt-5'>Manage Inventories</button></CustomLink>
+                <CustomLink to='/manage'> <button className='btn btn-link btn-style'>Manage Inventories</button></CustomLink>
             </div>
         </div>
     );

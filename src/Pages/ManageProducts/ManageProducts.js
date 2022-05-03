@@ -2,9 +2,14 @@ import React from 'react';
 import useProduct from '../../Hooks/useProduct';
 import { RiDeleteBack2Fill } from 'react-icons/ri';
 import CustomLink from '../Shared/CustomLink/CustomLink';
+import { useNavigate } from 'react-router-dom';
 
 const ManageProducts = () => {
     const [products, setProducts] = useProduct();
+    const navigate = useNavigate();
+    const navigateProduct = id => {
+        navigate(`/inventory/${id}`)
+    }
 
     const handleDelete = (id) => {
         const proceed = window.confirm('Wanna you sure for remove?');
@@ -29,11 +34,11 @@ const ManageProducts = () => {
                 </div>
             </div>
 
-            <div className="row row-cols-1 row-cols-md-3 g-5 mt-5">
+            <div className="row row-cols-1 row-cols-md-3 g-4 mt-5">
                 {
                     products.map(pd =>
                         <div className="col">
-                            <div className="card h-100 shadow-lg">
+                            <div className="card h-100 shadow-lg card-style">
                                 <div className=' d-flex justify-content-between'>
                                     <div className='w-75 mx-auto'>
                                         <img src={pd.img} className="card-img-top img-style" alt="..." />
@@ -46,6 +51,7 @@ const ManageProducts = () => {
                                     <p>Quantity: {pd.quantity} kg</p>
                                     <p>Supplier: {pd.supplier}</p>
                                     <h5>Price :{pd.price} Tk</h5>
+                                    <button onClick={() => navigateProduct(pd._id)} className='btn btn-link btn-style my-4'>Stock manage</button>
                                 </div>
                             </div>
                         </div>

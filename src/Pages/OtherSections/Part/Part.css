@@ -1,0 +1,28 @@
+.input-style {
+    border: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.submit {
+    border: none;
+    background-color: rgb(246, 95, 95);
+    color: antiquewhite;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.input-style:hover {
+    border: 2px solid red;
+}
+
+.submit:hover {
+    background-color: rgb(242, 70, 70);
+}
+
+.app-style img {
+    width: 120px;
+    height: 50px;
+}

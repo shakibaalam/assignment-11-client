@@ -10,16 +10,16 @@ const Products = ({ pd }) => {
     }
     return (
         <div className="col">
-            <div className="card h-100 shadow-lg">
+            <div className="card h-100 shadow-lg card-style">
                 <div className='w-75 mx-auto'>
                     <img src={img} className="card-img-top img-style" alt="..." />
                 </div>
                 <div className="card-body m-3">
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">{description}</p>
-                    <p>Quantity: {quantity} kg</p>
+                    <p className='fw-bold'>Quantity: {quantity} kg</p>
                     <p>Supplier: {supplier}</p>
-                    <h5>Price :{price} Tk</h5>
+                    <h5>Price : <span className='text-danger fw-bold'>{price}</span> Tk (per kg)</h5>
                     <button onClick={() => navigateProduct(_id)} className='btn btn-link btn-style my-4'>Stock manage</button>
                 </div>
             </div>

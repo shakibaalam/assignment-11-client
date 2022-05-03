@@ -15,7 +15,7 @@ import MyProduct from './Pages/MyProduct/MyProduct';
 
 function App() {
   return (
-    <div className="">
+    <div>
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>} />

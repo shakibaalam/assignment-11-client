@@ -8,6 +8,9 @@ import auth from '../firebase.init';
 const MyProduct = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
+    const navigateProduct = id => {
+        navigate(`/inventory/${id}`)
+    }
     const [myItem, setMyItem] = useState([]);
     useEffect(() => {
         const getAdd = async () => {
@@ -47,7 +50,7 @@ const MyProduct = () => {
         }
     }
     return (
-        <div className='mt-5 pt-5 container'>
+        <div className='mt-5 pt-5 container mb-4'>
             <div>
                 <h2>User:{user?.displayName}</h2>
                 <h3>Email:{user?.email} {user?.emailVerified && <p className='text-danger'>(verified)</p>}</h3>
@@ -55,7 +58,7 @@ const MyProduct = () => {
                 <h5>My Items: {myItem.length}</h5>
             </div>
 
-            <div className="row row-cols-1 row-cols-md-3 g-5 mt-5">
+            <div className="row row-cols-1 row-cols-md-3 g-4 mt-5">
                 {
                     myItem.map(data =>
                         <div className="col">
@@ -72,6 +75,7 @@ const MyProduct = () => {
                                     <p>Quantity: {data.quantity} kg</p>
                                     <p>Supplier: {data.supplier}</p>
                                     <h5>Price :{data.price} Tk</h5>
+                                    <button onClick={() => navigateProduct(data._id)} className='btn btn-link btn-style my-4'>Stock manage</button>
                                 </div>
                             </div>
                         </div>
