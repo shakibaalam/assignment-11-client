@@ -12,6 +12,8 @@ This project was also bootstrapped with [Server side private repo github link](h
 
 Server side live link: [https://guarded-stream-31463.herokuapp.com](https://guarded-stream-31463.herokuapp.com)
 
+Github issues link: [https://github.com/shakibaalam/genius-car-service/issues/1](https://github.com/shakibaalam/genius-car-service/issues/1)
+
 
 
 ## About this projects are:
