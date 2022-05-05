@@ -24,7 +24,7 @@ function App() {
           <RequireAuth>
             <InventoryPage></InventoryPage>
           </RequireAuth>
-        } />
+        } ></Route>
         <Route path="/my" element={
           <RequireAuth>
             <MyProduct></MyProduct>

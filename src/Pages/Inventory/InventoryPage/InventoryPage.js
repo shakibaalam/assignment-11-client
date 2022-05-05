@@ -3,12 +3,11 @@ import { Button, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useProductDetail from '../../../Hooks/useProductDetail';
 import CustomLink from '../../Shared/CustomLink/CustomLink';
-import './InventoryPage.css'
 
 const InventoryPage = () => {
     const { productId } = useParams();
     const [product] = useProductDetail(productId);
-    const { name, price, img, description, supplier, quantity, _id } = product;
+    const { name, price, img, description, supplier } = product;
 
     const [q, setQ] = useState([]);
     useEffect(() => {
@@ -68,9 +67,9 @@ const InventoryPage = () => {
                                 <div className="card-body m-3">
                                     <h5 className="card-title">{name}</h5>
                                     <p className="card-text">{description}</p>
-                                    <p>Quantity: {q} kg</p>
+                                    <p className='fw-bold'>Quantity: {q} kg</p>
                                     <p>Supplier: {supplier}</p>
-                                    <h5>Price :{price} Tk</h5>
+                                    <h5>Price : <span className='text-danger fw-bold'>{price}</span> Tk (per kg)</h5>
                                     <button onClick={handleDeliver} className='btn btn-link btn-style my-4'>Delivered</button>
                                 </div>
                             </div>

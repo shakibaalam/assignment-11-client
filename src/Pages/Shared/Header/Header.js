@@ -8,7 +8,7 @@ import CustomLink from '../CustomLink/CustomLink';
 import './Header.css'
 
 const Header = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const handleSignout = () => {
         signOut(auth);
     }

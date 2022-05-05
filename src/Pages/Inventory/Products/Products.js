@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import './Products.css'
 
 const Products = ({ pd }) => {
+
     const { name, price, img, description, supplier, quantity, _id } = pd;
     const navigate = useNavigate();
     const navigateProduct = id => {
         navigate(`/inventory/${id}`)
+
     }
     return (
         <div className="col">

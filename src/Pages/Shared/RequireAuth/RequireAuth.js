@@ -6,7 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const RequireAuth = ({ children }) => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const [sendEmailVerification] = useSendEmailVerification(auth);
     const location = useLocation();
 
@@ -16,6 +16,10 @@ const RequireAuth = ({ children }) => {
                 <span className="visually-hidden">Loading...</span>
             </div>
         </div>
+    }
+
+    if (!user) {
+        return <Navigate to="/login" state={{ from: location }} replace />;
     }
 
     if (!user.emailVerified) {
@@ -30,10 +34,6 @@ const RequireAuth = ({ children }) => {
                 <ToastContainer></ToastContainer>
             </div>
         );
-    }
-
-    if (!user) {
-        return <Navigate to="/login" state={{ from: location }} replace />;
     }
 
 

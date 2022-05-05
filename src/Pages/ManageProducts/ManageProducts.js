@@ -48,9 +48,9 @@ const ManageProducts = () => {
                                 <div className="card-body m-3">
                                     <h5 className="card-title">{pd.name}</h5>
                                     <p className="card-text">{pd.description}</p>
-                                    <p>Quantity: {pd.quantity} kg</p>
+                                    <p className='fw-bold'>Quantity: {pd.quantity} kg</p>
                                     <p>Supplier: {pd.supplier}</p>
-                                    <h5>Price :{pd.price} Tk</h5>
+                                    <h5>Price : <span className='text-danger fw-bold'>{pd.price}</span> Tk (per kg)</h5>
                                     <button onClick={() => navigateProduct(pd._id)} className='btn btn-link btn-style my-4'>Stock manage</button>
                                 </div>
                             </div>

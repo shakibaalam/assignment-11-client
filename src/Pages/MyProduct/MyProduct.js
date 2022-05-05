@@ -72,9 +72,9 @@ const MyProduct = () => {
                                 <div className="card-body m-3">
                                     <h5 className="card-title">{data.name}</h5>
                                     <p className="card-text">{data.description}</p>
-                                    <p>Quantity: {data.quantity} kg</p>
+                                    <p className='fw-bold'>Quantity: {data.quantity} kg</p>
                                     <p>Supplier: {data.supplier}</p>
-                                    <h5>Price :{data.price} Tk</h5>
+                                    <h5>Price : <span className='text-danger fw-bold'>{data.price}</span> Tk (per kg)</h5>
                                     <button onClick={() => navigateProduct(data._id)} className='btn btn-link btn-style my-4'>Stock manage</button>
                                 </div>
                             </div>
