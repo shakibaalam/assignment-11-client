@@ -70,6 +70,7 @@ const InventoryPage = () => {
                                     <p className='fw-bold'>Quantity: {q} kg</p>
                                     <p>Supplier: {supplier}</p>
                                     <h5>Price : <span className='text-danger fw-bold'>{price}</span> Tk (per kg)</h5>
+
                                     <button onClick={handleDeliver} className='btn btn-link btn-style my-4'>Delivered</button>
                                 </div>
                             </div>

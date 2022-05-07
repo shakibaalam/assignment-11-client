@@ -57,7 +57,7 @@ const Blog = () => {
                 <div className="col">
                     <div className="card h-100 shadow-lg">
                         <div className="card-body">
-                            <h5 className="card-title my-3">Question no:3</h5>
+                            <h5 className="card-title my-3">Question no:4</h5>
                             <h5 className="card-title fw-bold my-3">What are the purpose of jwt and How does it works?</h5>
                             <p className="card-text">
                                 <span className='text-info fw-bold fs-5'>Purpose of jwt:</span>

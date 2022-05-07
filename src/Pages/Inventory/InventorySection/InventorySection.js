@@ -8,7 +8,7 @@ const InventorySection = () => {
     const [products] = useProduct();
     return (
         <div className='container mt-5'>
-            <h2 className='text-center logo-style'>Inventory Items : {products.length}</h2>
+            <h2 className='text-center logo-style'>Inventory Items</h2>
             <div className="row row-cols-1 row-cols-md-3 g-4 mt-5">
                 {
                     products.slice(0, 6).map(pd => <Products key={pd._id} pd={pd}></Products>)
