@@ -64,7 +64,7 @@ const MyProduct = () => {
                         <div className="col">
                             <div className="card h-100 shadow-lg">
                                 <div className=' d-flex justify-content-between'>
-                                    <div className='w-75 mx-auto'>
+                                    <div className='mx-auto'>
                                         <img src={data.img} className="card-img-top img-style" alt="..." />
                                     </div>
                                     <div className='text-danger fw-bold fs-5' onClick={() => handleDelete(data._id)}><RiDeleteBack2Fill></RiDeleteBack2Fill></div>
@@ -74,7 +74,7 @@ const MyProduct = () => {
                                     <p className="card-text">{data.description}</p>
                                     <p className='fw-bold'>Quantity: {data.quantity} kg</p>
                                     <p>Supplier: {data.supplier}</p>
-                                    <h5>Price : <span className='text-danger fw-bold'>{data.price}</span> Tk (per kg)</h5>
+                                    <h5>Price : <span className='text-danger fw-bold'>{data.price}</span> <small>Tk/kg</small></h5>
                                     <button onClick={() => navigateProduct(data._id)} className='btn btn-link btn-style my-4'>Stock manage</button>
                                 </div>
                             </div>

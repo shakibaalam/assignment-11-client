@@ -7,7 +7,7 @@ import CustomLink from '../../Shared/CustomLink/CustomLink';
 const InventoryPage = () => {
     const { productId } = useParams();
     const [product] = useProductDetail(productId);
-    const { name, price, img, description, supplier } = product;
+    const { name, price, img, description, supplier, sold } = product;
 
     const [q, setQ] = useState([]);
     useEffect(() => {
@@ -68,8 +68,9 @@ const InventoryPage = () => {
                                     <h5 className="card-title">{name}</h5>
                                     <p className="card-text">{description}</p>
                                     <p className='fw-bold'>Quantity: {q} kg</p>
+                                    <p>Sold : {sold}</p>
                                     <p>Supplier: {supplier}</p>
-                                    <h5>Price : <span className='text-danger fw-bold'>{price}</span> Tk (per kg)</h5>
+                                    <h5>Price : <span className='text-danger fw-bold'>{price}</span> <small>Tk/kg</small></h5>
 
                                     <button onClick={handleDeliver} className='btn btn-link btn-style my-4'>Delivered</button>
                                 </div>

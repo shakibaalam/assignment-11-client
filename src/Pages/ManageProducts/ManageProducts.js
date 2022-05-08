@@ -40,7 +40,7 @@ const ManageProducts = () => {
                         <div className="col">
                             <div className="card h-100 shadow-lg card-style">
                                 <div className=' d-flex justify-content-between'>
-                                    <div className='w-75 mx-auto'>
+                                    <div className='mx-auto'>
                                         <img src={pd.img} className="card-img-top img-style" alt="..." />
                                     </div>
                                     <div className='text-danger fw-bold fs-5' onClick={() => handleDelete(pd._id)}><RiDeleteBack2Fill></RiDeleteBack2Fill></div>
@@ -50,7 +50,7 @@ const ManageProducts = () => {
                                     <p className="card-text">{pd.description}</p>
                                     <p className='fw-bold'>Quantity: {pd.quantity} kg</p>
                                     <p>Supplier: {pd.supplier}</p>
-                                    <h5>Price : <span className='text-danger fw-bold'>{pd.price}</span> Tk (per kg)</h5>
+                                    <h5>Price : <span className='text-danger fw-bold'>{pd.price}</span> <small>Tk/kg</small></h5>
                                     <button onClick={() => navigateProduct(pd._id)} className='btn btn-link btn-style my-4'>Stock manage</button>
                                 </div>
                             </div>
