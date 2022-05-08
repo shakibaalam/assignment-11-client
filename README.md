@@ -19,7 +19,7 @@ Github issues link: [https://github.com/shakibaalam/genius-car-service/issues/1]
 ## About this projects are:
 - This project related with a Grocery stock management
 - In this project there is a header
-- A manage section
+- A manage page ,update inventory page, add page
 - Login page ,sign up 
 - And also a question answering part in blog page
 
