@@ -4,19 +4,20 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const AddInventory = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const handleAdd = (e) => {
         e.preventDefault();
         const email = e.target.formBasicEmail.value;
         const img = e.target.formBasicImg.value;
         const name = e.target.formBasicName.value;
         const description = e.target.formBasicDescription.value;
-        const amount = e.target.formBasicAmount.value;
+        const quantity = e.target.formBasicAmount.value;
+        const sold = e.target.formBasicSold.value;
         const supplier = e.target.formBasicSupplier.value;
         const price = e.target.formBasicNumber.value;
-        console.log(img, name, description, amount, supplier, price);
+        console.log(img, name, description, quantity, supplier, price);
 
-        const data = { email, img, name, description, amount, supplier, price };
+        const data = { email, img, name, description, quantity, supplier, price, sold };
         const url = `https://guarded-stream-31463.herokuapp.com/products`
         fetch(url, {
             method: 'POST',
@@ -31,7 +32,7 @@ const AddInventory = () => {
         e.target.reset();
     }
     return (
-        <div className='container mt-5 pt-5'>
+        <div className='container mt-5 pt-5 form-style pb-5'>
             <h2 className='text-center my-4'>Add new item....</h2>
             <div className='w-50 mx-auto'>
                 <Form onSubmit={handleAdd}>
@@ -40,11 +41,11 @@ const AddInventory = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicImg">
-                        <Form.Control type="text" placeholder='img url' />
+                        <Form.Control type="text" placeholder='img url' required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicName">
-                        <Form.Control type="text" placeholder='item name' />
+                        <Form.Control type="text" placeholder='item name' required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicDescription">
@@ -52,15 +53,19 @@ const AddInventory = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicAmount">
-                        <Form.Control type="number" placeholder="amount" />
+                        <Form.Control type="number" placeholder="quantity" required />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicSold">
+                        <Form.Control type="number" value={"0"} required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicSupplier">
-                        <Form.Control type="text" placeholder='supplier name' />
+                        <Form.Control type="text" placeholder='supplier name' required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicNumber">
-                        <Form.Control type="number" placeholder="price" />
+                        <Form.Control type="number" placeholder="price" required />
                     </Form.Group>
 
                     <Button variant="primary" type="submit">

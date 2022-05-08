@@ -7,19 +7,27 @@ import CustomLink from '../../Shared/CustomLink/CustomLink';
 const InventoryPage = () => {
     const { productId } = useParams();
     const [product] = useProductDetail(productId);
-    const { name, price, img, description, supplier, sold } = product;
+    const { name, price, img, description, supplier } = product;
 
     const [q, setQ] = useState([]);
+    const [s, setS] = useState([]);
     useEffect(() => {
         const url = `https://guarded-stream-31463.herokuapp.com/products/${productId}/quantity`
         fetch(url)
             .then(res => res.json())
-            .then(data => setQ(data));
+            .then(data => {
+                console.log(data);
+                setQ(data.quantityCount);
+                setS(data.soldCount);
+            });
     }, [productId]);
 
     const handleDeliver = () => {
-        const count = (q - 1).toString()
-        const update = { count };
+        const sold = (parseInt(s) + 1).toString();
+        console.log(sold);
+        const count = (q - 1).toString();
+        console.log(count);
+        const update = { count, sold };
         // console.log(update);
         const url = `https://guarded-stream-31463.herokuapp.com/products/${productId}`
         fetch(url, {
@@ -29,8 +37,9 @@ const InventoryPage = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(parseInt(data.count));
+                console.log(data.count);
                 setQ(parseInt(data.count))
+                setS(parseInt(data.sold))
             })
     };
 
@@ -68,7 +77,7 @@ const InventoryPage = () => {
                                     <h5 className="card-title">{name}</h5>
                                     <p className="card-text">{description}</p>
                                     <p className='fw-bold'>Quantity: {q} kg</p>
-                                    <p>Sold : {sold}</p>
+                                    <p>Sold : {s} kg</p>
                                     <p>Supplier: {supplier}</p>
                                     <h5>Price : <span className='text-danger fw-bold'>{price}</span> <small>Tk/kg</small></h5>
 

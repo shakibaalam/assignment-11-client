@@ -62,7 +62,7 @@ const MyProduct = () => {
                 {
                     myItem.map(data =>
                         <div className="col">
-                            <div className="card h-100 shadow-lg">
+                            <div className="card h-100 shadow card-style">
                                 <div className=' d-flex justify-content-between'>
                                     <div className='mx-auto'>
                                         <img src={data.img} className="card-img-top img-style" alt="..." />
@@ -73,6 +73,7 @@ const MyProduct = () => {
                                     <h5 className="card-title">{data.name}</h5>
                                     <p className="card-text">{data.description}</p>
                                     <p className='fw-bold'>Quantity: {data.quantity} kg</p>
+                                    <p>Sold : {data.sold} kg</p>
                                     <p>Supplier: {data.supplier}</p>
                                     <h5>Price : <span className='text-danger fw-bold'>{data.price}</span> <small>Tk/kg</small></h5>
                                     <button onClick={() => navigateProduct(data._id)} className='btn btn-link btn-style my-4'>Stock manage</button>

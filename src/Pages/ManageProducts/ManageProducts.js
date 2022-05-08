@@ -29,7 +29,7 @@ const ManageProducts = () => {
         <div className='container mt-5 pt-5'>
             <div className='d-flex justify-content-between'>
                 <h2>Manage Product :{products.length}</h2>
-                <div className=''>
+                <div>
                     <CustomLink to='/add'> <button className='btn btn-link btn-style'>Add Inventories</button></CustomLink>
                 </div>
             </div>
@@ -49,6 +49,7 @@ const ManageProducts = () => {
                                     <h5 className="card-title">{pd.name}</h5>
                                     <p className="card-text">{pd.description}</p>
                                     <p className='fw-bold'>Quantity: {pd.quantity} kg</p>
+                                    <p>Sold : {pd.sold} kg</p>
                                     <p>Supplier: {pd.supplier}</p>
                                     <h5>Price : <span className='text-danger fw-bold'>{pd.price}</span> <small>Tk/kg</small></h5>
                                     <button onClick={() => navigateProduct(pd._id)} className='btn btn-link btn-style my-4'>Stock manage</button>
